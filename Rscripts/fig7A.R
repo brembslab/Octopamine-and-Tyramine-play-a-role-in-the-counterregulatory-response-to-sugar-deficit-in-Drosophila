@@ -12,7 +12,7 @@
 
     #TA_homo = na.omit(TA_homo)
     TA_homo$genotype = as.factor(TA_homo$receptor) 
-    levels (TA_homo$genotype)= c("TyrR", "TyrR,TyrII", "TyrII", "Control")
+    levels (TA_homo$genotype)= c("tyrR", "tyrR,tyrII", "tyrII", "Control")
 
     
     a <- aggregate(SCORE ~ genotype + genotype , TA_homo, function(i) c(val=length(i), ypos=quantile(i)[2]))
@@ -51,7 +51,7 @@
   #recalculate score from raw data (modifiable)
   OAMBfemales=score_PER (OAMBfemales)
   
-  levels (OAMBfemales$genotype)= c("OAMB286", "OAMB584", "Control")
+  levels (OAMBfemales$genotype)= c("oamb286", "oamb584", "Control")
   a <- aggregate(SCORE ~ genotype + genotype , OAMBfemales, function(i) c(val=length(i), ypos=quantile(i)[3]))
   
   F7A3=ggplot(OAMBfemales, aes(x=genotype, y=SCORE, fill=genotype)) + # says which column in the table should be the x/y axis, fill says which groups you have within the columns

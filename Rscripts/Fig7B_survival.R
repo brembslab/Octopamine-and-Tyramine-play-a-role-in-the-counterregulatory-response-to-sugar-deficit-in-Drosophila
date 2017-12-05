@@ -64,7 +64,7 @@ wt_tyr$genotype = "A_Control"
 total = rbind (wt_tyr, cg7431, CG7431_TyrII, TyrII)
 total = droplevels(total)
 total$genotype = as.factor(total$genotype)
-levels(total$genotype) = c("Control", "TyrR", "TyrR,TyrII", "TyrII")
+levels(total$genotype) = c("Control", "tyrR", "tyrR,tyrII", "tyrII")
   total_2 =rbind(total_2,total)
   A = survfit(Surv(time, event) ~ genotype, data = total)
   Fig7B2=ggplot2::autoplot(A, surv.geom ="line") +
